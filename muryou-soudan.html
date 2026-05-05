@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無料相談 | クレカ×MNP錬金術師 やっぴー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #f4f4ef;
+  --s1:        #ffffff;
+  --s2:        #f0f0eb;
+  --border:    #e0e0da;
+  --text:      #1a1a1a;
+  --sub:       #4a4a4a;
+  --muted:     #888;
+
+  --green:     #0a6e50;
+  --green-lt:  #e6f5f0;
+  --green-bdr: #7dcbb8;
+  --green-txt: #0a4a38;
+  --green-mid: #1d9e75;
+
+  --blue:      #1e5fbe;
+  --blue-lt:   #e8f0fc;
+  --blue-bdr:  #a8c4f0;
+  --blue-txt:  #1a3a7a;
+
+  --gold:      #9a5a00;
+  --gold-lt:   #fff8e6;
+  --gold-bdr:  #f5c46b;
+  --gold-txt:  #6b3d00;
+
+  --mono: 'DM Mono', monospace;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 2rem 1rem 5rem;
+  line-height: 1.7;
+}
+.page { max-width: 680px; margin: 0 auto; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0f2040 0%, #1a5cbf 100%);
+  border-radius: 20px;
+  padding: 2.5rem 1.75rem 2rem;
+  margin-bottom: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #34d399, #fbbf24);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -60px; top: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+}
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,.6);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.hero-title {
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+.hero-title .accent { color: #34d399; }
+.hero-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.8;
+}
+
+/* SECTION LABEL */
+.sec-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+/* PROLOGUE */
+.prologue {
+  background: var(--s1);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green-mid);
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.prologue p {
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 1.9;
+}
+.prologue strong { color: var(--text); font-weight: 700; }
+
+/* INSIGHT */
+.insight {
+  background: var(--s1);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.insight-intro {
+  font-size: 14px;
+  color: var(--sub);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+.benefit-list { list-style: none; margin-bottom: 1.25rem; }
+.benefit-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.55rem 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+.benefit-list li:last-child { border-bottom: none; }
+.check {
+  width: 22px; height: 22px;
+  background: var(--green-mid);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.insight-conclusion {
+  background: var(--green-lt);
+  border: 1.5px solid var(--green-bdr);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  font-size: 14px;
+  color: var(--green-txt);
+  line-height: 1.8;
+}
+.insight-conclusion strong { color: var(--green); }
+
+/* CONSULT */
+.consult-section {
+  background: var(--s1);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.consult-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.consult-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.consult-card {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+.consult-card .tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  border: 1.5px solid;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.tag-green { background: var(--green-lt); color: var(--green); border-color: var(--green-bdr); }
+.tag-blue  { background: var(--blue-lt);  color: var(--blue);  border-color: var(--blue-bdr); }
+.tag-gold  { background: var(--gold-lt);  color: var(--gold);  border-color: var(--gold-bdr); }
+.consult-card p { font-size: 13px; color: var(--sub); line-height: 1.7; }
+
+/* REASSURE */
+.reassure {
+  background: var(--green-lt);
+  border: 1.5px solid var(--green-bdr);
+  border-radius: 16px;
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.time-badge {
+  display: inline-block;
+  background: var(--green-mid);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 18px;
+  border-radius: 99px;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+}
+.reassure h3 {
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.reassure p { font-size: 13px; color: var(--green-txt); line-height: 1.8; }
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #0a6e50 0%, #1d9e75 100%);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #34d399, #fbbf24, #60a5fa);
+}
+.cta-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,.65);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.cta h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.cta-step {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  margin-bottom: 0.75rem;
+}
+.cta-step .step-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 0.3rem;
+}
+.cta-step p { font-size: 14px; color: #fff; line-height: 1.7; }
+.cta-step p strong { color: #fbbf24; }
+
+.quote-block {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,.2);
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,.75);
+  line-height: 1.9;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Free Consultation — クレカ × MNP錬金術師</div>
+    <h1 class="hero-title">
+      知っている人だけが<br>得をしている、という<span class="accent">現実。</span>
+    </h1>
+    <p class="hero-desc">やっぴー ｜ 無料相談ページ</p>
+  </div>
+
+  <!-- PROLOGUE -->
+  <div class="sec-label">Prologue — やっぴーとは？</div>
+  <div class="prologue">
+    <p>
+      自営業をしながら、クレカとスマホ回線（MNP）を組み合わせた仕組みを研究・実践してきました。<br><br>
+      最初は半信半疑でしたが、今では<strong>ホテル代・飛行機代をほぼゼロにして全国を旅しています。</strong>難しい知識は不要で、順番通りに進めれば誰でもできると気づいてから、周りにも伝えたくなりました。
+    </p>
+  </div>
+
+  <!-- INSIGHT -->
+  <div class="sec-label">気づき — 同じ生活費でも差がつく理由</div>
+  <div class="insight">
+    <p class="insight-intro">クレカを普通に使っているだけでは、正直もったいないです。<br>同じ生活費を払っていても、仕組みを知っている人は——</p>
+    <ul class="benefit-list">
+      <li><span class="check">✓</span>ホテル代を抑えられる</li>
+      <li><span class="check">✓</span>飛行機代を抑えられる</li>
+      <li><span class="check">✓</span>ポイントがどんどん貯まる</li>
+      <li><span class="check">✓</span>現金収入につながることもある</li>
+    </ul>
+    <div class="insight-conclusion">
+      お金の使い方を少し変えるだけで、<strong>選べる未来が増えていきます。</strong><br>
+      クレカとスマホ回線を組み合わせた初心者向けの仕組み作り。難しい知識がなくても、順番通りに進めれば大丈夫です。
+    </div>
+  </div>
+
+  <!-- CONSULT -->
+  <div class="consult-section">
+    <div class="sec-label" style="margin-bottom:0.5rem;">What we talk about</div>
+    <h2 class="consult-title">相談できること、なんでも聞いてください</h2>
+    <div class="consult-grid">
+      <div class="consult-card">
+        <span class="tag tag-green">MNP</span>
+        <p>携帯乗り換えの基本〜実践まで。キャッシュバックの受け取り方も丁寧に説明します。</p>
+      </div>
+      <div class="consult-card">
+        <span class="tag tag-blue">クレジットカード</span>
+        <p>どのカードをどう使えばお得か。ポイントの効率的な貯め方・使い方。</p>
+      </div>
+      <div class="consult-card">
+        <span class="tag tag-gold">旅行・マイル</span>
+        <p>ホテルや飛行機をほぼゼロ円にする仕組みの考え方。</p>
+      </div>
+      <div class="consult-card">
+        <span class="tag tag-green">その他</span>
+        <p>わかる範囲でなんでも。一緒に考えます。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REASSURE -->
+  <div class="reassure">
+    <div class="time-badge">MAX 60分</div>
+    <h3>完全無料・売り込みなし</h3>
+    <p>「相談したら何か売られるんじゃ…」という心配は不要です。<br>まずは気軽にメッセージを送ってみてください。</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-label">How to apply — 申し込み方法</div>
+    <h3>まずは気軽に相談してみる</h3>
+
+    <div class="cta-step">
+      <div class="step-label">STEP 01</div>
+      <p><strong>希望日時と希望時間帯</strong>をこのLINEに送ってください</p>
+    </div>
+    <div class="cta-step">
+      <div class="step-label">STEP 02</div>
+      <p>日程確定後、<strong>ZoomまたはLINE通話</strong>でお話しします（最大60分・無料）</p>
+    </div>
+
+    <div class="quote-block">
+      「知ってるだけで得する情報を、<br>知らないまま損し続けるのはもったいない」
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
